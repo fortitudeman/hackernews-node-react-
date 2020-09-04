@@ -12,7 +12,7 @@ class Title extends Component {
               <tr>
                 <td className="image">
                   <a href="/">
-                    <img src={logo} />
+                    <img src={logo} alt="logo"/>
                   </a>
                 </td>
                 <td className="headerTd">
