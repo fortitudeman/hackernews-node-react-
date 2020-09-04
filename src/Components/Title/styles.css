@@ -1,0 +1,45 @@
+.td {
+  background: #ff6600;
+}
+.header {
+  border: 0;
+  padding: 2px;
+  border-spacing: 0;
+  width: 100%;
+}
+.image {
+  width: 18px;
+  padding-right: 4px;
+}
+.headerTd {
+  line-height: 12pt;
+  height: 10px;
+}
+.login {
+  text-align: right;
+  padding-right: 4px;
+}
+
+.header img {
+  width: 20px;
+  height: 20px;
+  border: 1px white solid;
+  
+  margin-top: 2px;
+}
+
+
+
+
+@media only screen and (max-width: 750px) and (min-width: 300px){
+  td {
+      height: inherit !important;
+  }
+  #hnmain {
+      width: 100%;
+  }
+  span.pagetop b {
+      font-size: 15px;
+      display: block;
+  }
+}
