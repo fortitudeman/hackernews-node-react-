@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+import {tablet} from "../styles/mediaQueries"
 
 const GlobalStyles = createGlobalStyle`
     * {
@@ -9,6 +10,9 @@ const GlobalStyles = createGlobalStyle`
       font-size: 10pt;
       color: #828282;
       overflow-x: hidden;
+      ${tablet} {
+        margin: 0;
+      }
     }
     a {
       text-decoration: none; 
