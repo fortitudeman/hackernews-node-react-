@@ -1,19 +1,34 @@
 import styled from 'styled-components';
 
 export const Item = styled.td`
-  border-bottom: 1px solid ${({ theme }) => theme.border};
-  padding: 14px 24px;
-
-  &:last-child {
-    border-bottom: none;
+  vertical-align: top;
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 10pt;
+  color: #828282;
+  span{
+    color: #828282;
   }
 `
-export const Host = styled.span``
-export const Title = styled.h3`
-
+export const Host = styled.span`
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 8pt;
+  color: #828282;
+`
+export const Divider = styled.td`
+  height:5px;
 `
 export const OutLink = styled.a`
+  a:link, a:visited{
+    color:#828282;
+    text-decoration: none;
+  }
 `
-export const Description = styled.div`
+export const Description = styled.td`
+  font-size: 7pt;
+  span {
+    color: #828282;
+  }
 `
-export const CommentLink = styled.a``
+export const CommentLink = styled.a`
+  color: #828282 !important;
+`
