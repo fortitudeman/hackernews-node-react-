@@ -13,11 +13,22 @@ class App extends Component {
   static propTypes = {
     stories: PropTypes.array.isRequired,
     fetchStoriesFirstPage: PropTypes.func.isRequired,
+    page: PropTypes.string.isRequired,
+    storyIds: PropTypes.array.isRequired,
+    isFetching: PropTypes.bool.isRequired,
+    hasMoreStores: PropTypes.bool.isRequired,
+    fetchStories: PropTypes.func.isRequired,
   }
   componentDidMount() {
     this.props.fetchStoriesFirstPage();
   }
 
+  fetchStories = () => {
+    const { storyIds, page, fetchStories, isFetching } = this.props;
+    if (!isFetching) {
+      fetchStories({ storyIds, page });
+    }
+  };
   render() {
     const { stories } = this.props;
     return (
