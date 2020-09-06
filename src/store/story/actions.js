@@ -7,7 +7,6 @@ export const actionTypes = {
   FETCH_STORY_IDS: `${NS}/FETCH_STORY_IDS`,
   FETCH_STORIES: `${NS}/FETCH_STORIES`,
 };
-
 const actions = {
   fetchStoryIds: buildRequestCreator(
     actionTypes.FETCH_STORY_IDS,
@@ -17,7 +16,12 @@ const actions = {
         .getTopStoryIds()
         .then(storyIds => {
           dispatch(request.success({ storyIds }));
-          dispatch(actions.fetchStories({ storyIds, page: 0 }));
+          let path = window.location.pathname
+          if(path.length > 0 && path.split("=").length > 1) {
+            var page = path.split("=")[1]
+          }
+          else page = 0
+          dispatch(actions.fetchStories({ storyIds, page : page }));
           return storyIds;
         })
         .catch(err => dispatch(request.failure(err)));
