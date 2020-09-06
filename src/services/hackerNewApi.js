@@ -6,8 +6,8 @@ const client = new ApiService({ baseURL: BASE_URL });
 
 const hackerNewsApi = {};
 
-const PAGE_LIMIT = 20;
-const getPageSlice = (limit, page = 0) => ({ begin: page * limit, end: (page + 1) * limit });
+const PAGE_LIMIT = 30;
+const getPageSlice = (limit, page) => ({ begin: page * limit, end: (Number(page) + 1) * limit });
 const getPageValues = ({ begin, end, items }) => items.slice(begin, end);
 
 hackerNewsApi.getTopStoryIds = () => client.get(`/topstories${JSON_QUERY}`);
