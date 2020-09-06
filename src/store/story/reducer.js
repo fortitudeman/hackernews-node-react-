@@ -1,14 +1,13 @@
 import { actionTypes } from './actions';
 
 let path = window.location.pathname
-if(path.length > 0 && path.split("=") > 1) {
+if(path.length > 0) {
   var page = path.split("=")[1]
 }
-else var page = 0
 const getInitialState = () => ({
   storyIds: [],
   stories: [],
-  page: page,
+  page: page || 0,
   isFetching: false,
   error: '',
 });
