@@ -14,7 +14,7 @@ export const Host = styled.span`
   font-size: 8pt;
   color: #828282;
 `
-export const Divider = styled.td`
+export const Divider = styled.tr`
   height:5px;
 `
 export const OutLink = styled.a`
