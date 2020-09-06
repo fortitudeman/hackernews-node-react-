@@ -1,9 +1,14 @@
 import { actionTypes } from './actions';
 
+let path = window.location.pathname
+if(path.length > 0 && path.split("=") > 1) {
+  var page = path.split("=")[1]
+}
+else var page = 0
 const getInitialState = () => ({
   storyIds: [],
   stories: [],
-  page: 0,
+  page: page,
   isFetching: false,
   error: '',
 });
@@ -24,8 +29,7 @@ const story = (state = getInitialState(), { type, payload }) => {
     case `${actionTypes.FETCH_STORIES}_SUCCESS`:
       return {
         ...state,
-        stories: [...state.stories, ...payload.stories],
-        page: state.page + 1,
+        stories: [...payload.stories],
         isFetching: false,
       };
     default:
